@@ -1,18 +1,46 @@
+$primary-color: #498280;
+$secondary-color: #593160;
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 main {
     flex: 2;
+    background-color: $primary-color;
 }
 
 section {
     max-width: 800px;
     margin: 50px auto;
-    h2{
-      font-size: 1.5em;
-      text-align: center;
-    }
+
+}
+#results-section{
+  background-color: #699290;
+  height: 50vh;
+}
+#results{
+  text-align: center;
+  font-size: 25px;
+  margin:auto;
+  margin-top: 25%;
+}
+strong{
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.loader {
+border: 8px solid #f3f3f3; /* Light grey */
+border-top: 8px solid $secondary-color; /* Blue */
+border-radius: 50%;
+width: 60px;
+height: 60px;
+animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
 }

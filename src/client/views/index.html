@@ -8,17 +8,12 @@
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+          <h1>How Confident Are They?</h1>
         </header>
 
         <main>
             <section>
-                <h2>How Confident Are They?</h2>
+                <strong>Url to article:</strong>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="name" type="text" name="input" value="" placeholder="http://www.example.com">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
@@ -26,17 +21,22 @@
                 </form>
             <section>
 
-            <section>
+            <section id="results-section">
                 <strong>Form Results:</strong>
                 <div id="results"></div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
         </footer>
         <script>
-
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
         </script>
     </body>
 </html>

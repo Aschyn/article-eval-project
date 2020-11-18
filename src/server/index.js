@@ -36,6 +36,6 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
 })
 
-app.get('/test', function (req, res) {
+app.get('/apiKey', function (req, res) {
     res.send(sentimentApi)
 })
