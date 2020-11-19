@@ -15,7 +15,11 @@ function queryApi(key, input){
   })
   .then(data =>{
     document.querySelector('#results').classList.remove('loader');
-    document.querySelector('#results').innerHTML = '<p>'+data.confidence+'% Confident</p>';
+    document.querySelector('#confidence').innerHTML = `Confidence: ${data.confidence}%`;
+    document.querySelector('#subjectivity').innerHTML = `Subjectivity: ${data.subjectivity}`;
+    document.querySelector('#irony').innerHTML = `Irony: ${data.irony}`;
+    document.querySelector('#agreement').innerHTML = `Agreement: ${data.agreement}`;
+    document.querySelector('#score').innerHTML = `Score: ${data.score_tag}`;
   })
   .catch(error => errorMsg(error));
 }
@@ -35,7 +39,7 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
     if(Client.checkForName(formText)){
       document.querySelector('#results').classList.add('loader');
-      fetch('/apiKey')
+      fetch('http://localhost:8080/apiKey')
       .then((res) => {
         if(!res.ok){
           if(res.status === 404){
