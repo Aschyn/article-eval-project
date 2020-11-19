@@ -12,17 +12,18 @@
         </header>
 
         <main>
+          
             <section>
-                <strong>Url to article:</strong>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <h3>Url to article:</h3>
                     <input id="name" type="text" name="input" value="" placeholder="http://www.example.com">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input type="submit" name="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                     <span id="error"></span>
                 </form>
-            <section>
+            </section>
 
             <section id="results-section">
-                <strong>Form Results:</strong>
+                <h3>Form Results:</h3>
                 <div id="results"></div>
             </section>
         </main>
